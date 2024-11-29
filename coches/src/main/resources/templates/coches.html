@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <th:text="#{titulo.coches}"/>Coches
+    </title>
+</head>
+
+<body>
+    <h1 th:text="#{titulo.coches}">Coches<h1>
+    <p th:if="${coche.isEmpty}">No hay coches.</p>
+    <p th:text"#{message.nohaycoches}"></p>
+    <table>
+        <tr>
+            <td><p th:text="#{coche.marca}">Marca</p></td>
+            <td>Marca</td>
+        </tr>
+        <tr th:each="coche : ${coches}">
+            <td th:text="{coche.marca}"></td>
+        </tr>
+    </table>
+</body>
+
+</html>

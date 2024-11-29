@@ -1,5 +1,6 @@
 package com.example.coches.controlador;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,6 +39,15 @@ public class ControladorCoche {
 		 }else {
 			 return "redirect:/?lang=es";
 		 }
+	 }
+
+	 @GetMapping("/coches")
+	 public String coche(Model model){
+		List<Coche> coches = servicioCoches.obtenerTodos();
+		//model.addAttribute("idiomas", Idioma.values());
+		//List<Coche> coches = new ArrayList<Coche>();
+		model.addAttribute("coches", coches);
+		return "coches";
 	 }
 	 
 }
